@@ -1,0 +1,5 @@
+{
+  // Groups of babel plugns 'env' and 'react'
+  "presets": [ "env", "react" ],
+  "plugins": [ "transform-class-properties" ]
+}
