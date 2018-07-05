@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Link, NavLink } from 'react-router-dom';
-import ExpenseDashboardPage from '../components/ExpenseDashboardPage';
-import AddExpenseComponent from '../components/AddExpenseComponent';
-import EditExpensePage from '../components/EditExpensePage';
-import HelpPage from '../components/HelpPage';
+import HomePage from '../components/HomePage';
 import Header from '../components/Header';
+import PortfolioPage from '../components/PortfolioPage';
+import EditPortfolioPage from '../components/EditPortfolioPage';
+import ContactPage from '../components/ContactPage';
 import NotFound from '../components/NoFound';
 
 const AppRouter = () => (
@@ -18,10 +18,10 @@ const AppRouter = () => (
 			<Switch>
 				{/* Tells react router that whenever it matches the path="/", then render the ExpenseDashboardPage component.
 				 exact by default is false , since set to true will ensure the url path exactly matches the value of path here.*/}
-				<Route path="/" component={ExpenseDashboardPage} exact={ true }/>
-				<Route path="/create" component={AddExpenseComponent} />
-				<Route path="/edit/:id" component={EditExpensePage} />
-				<Route path="/help" component={HelpPage} />
+				<Route path="/" component={HomePage} exact={ true }/>
+				<Route path="/portfolio" component={PortfolioPage} exact={ true }/>
+				<Route path="/portfolio/:id" component={EditPortfolioPage}/>
+				<Route path="/contact" component={ContactPage}/>
 				{/* If it does not match the urls defined in route path above it will render the NotFound component*/}
 				<Route component={NotFound} />
 			</Switch>
